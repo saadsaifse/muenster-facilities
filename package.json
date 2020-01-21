@@ -1,23 +1,28 @@
 {
-  "name": "muenster-facilities",
-  "version": "1.0.0",
-  "description": "Visualization of facilities in Münster, Germany",
-  "main": "index.js",
-  "scripts": {
-    "start": "parcel src/index.html",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "visualization",
-    "münster"
-  ],
-  "author": "",
-  "license": "MIT",
-  "dependencies": {
-    "leaflet": "^1.6.0",
-    "leaflet-toolbar": "^0.4.0-alpha.2"
-  },
-  "devDependencies": {
-    "parcel": "^1.12.4"
-  }
+    "name": "muenster-facilities",
+    "version": "1.0.0",
+    "description": "Visualization of facilities in Münster, Germany",
+    "main": "index.js",
+    "scripts": {
+        "start": "parcel src/index.html",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "visualization",
+        "münster"
+    ],
+    "author": "",
+    "license": "MIT",
+    "dependencies": {
+        "leaflet": "^1.6.0",
+        "leaflet-toolbar": "^0.4.0-alpha.2"
+    },
+    "devDependencies": {
+        "parcel": "^1.12.4"
+    },
+    "browserslist": [
+        "last 1 version",
+        "> 1%",
+        "IE 10"
+    ]
 }
