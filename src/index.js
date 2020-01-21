@@ -21,6 +21,17 @@ L.tileLayer(
     }
 ).addTo(map)
 
+let radiusCircle
+
+map.on('click', e => {
+    if (map.hasLayer(radiusCircle)) map.removeLayer(radiusCircle)
+    const radius = prompt(
+        'How far you feel like going around you?',
+        parseFloat(1)
+    )
+    radiusCircle = L.circle(e.latlng, { radius: radius }).addTo(map)
+})
+
 const addSwimmingFeatures = () => {
     fetch(config.baeder)
         .then(response => response.json())
