@@ -20,7 +20,7 @@ export const book = L.divIcon({
 
 export const glass = L.divIcon({
     className: 'div-icon',
-    html: '<i class="fas fa-recycle"></i>',
+    //html: '<i class="fas fa-recycle"></i>',
     iconAnchor: [11, 5],
 })
 
