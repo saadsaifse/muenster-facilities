@@ -3,13 +3,6 @@ body {
     margin: 0;
 }
 
-#mapid {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-}
-
 .baeder {
     margin: 0 auto;
     text-align: center;
@@ -21,4 +14,21 @@ body {
     left: 0;
     right: 0;
     text-align: center;
+}
+
+.container {
+    width: 100%;
+}
+
+.item {
+}
+
+.list-item {
+}
+
+#mapid {
+    width: 70%;
+    height: 90%;
+    position: absolute;
+    top: 0;
 }
