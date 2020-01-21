@@ -21,6 +21,40 @@ L.tileLayer(
     }
 ).addTo(map)
 
+let radiusCircle
+
+map.on('click', e => {
+    if (map.hasLayer(radiusCircle)) map.removeLayer(radiusCircle)
+    const radius = prompt(
+        'How far you feel like going around you?',
+        parseFloat(1)
+    )
+    radiusCircle = L.circle(e.latlng, { radius: radius }).addTo(map)
+    const features = getFeaturesInRadius(e.latlng, radius)
+    const children = features.map(feature => {
+        return feature.id
+        // console.log(feature.id)
+        // return `<div class="list-item">${feature.id}</div>`
+    })
+    alert(`Feature IDs found in radius are:\n ${children}`)
+    //console.log(children)
+    //document.getElementById('list').innerHTML = children
+})
+
+const getFeaturesInRadius = (latlng, radius) => {
+    const featuresWithinTheRadius = []
+    map.eachLayer(layer => {
+        if (layer instanceof L.Marker) {
+            const featureLatLng = layer.getLatLng()
+            const distance = featureLatLng.distanceTo(latlng)
+            if (distance <= radius) {
+                featuresWithinTheRadius.push(layer.feature)
+            }
+        }
+    })
+    return featuresWithinTheRadius
+}
+
 const addSwimmingFeatures = () => {
     fetch(config.baeder)
         .then(response => response.json())
